@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: sample_data
+    description: "Testing dbt source"
+    database: sonic-trail-416307
+    schema: trips_all_data
+    tables:
+      - name: green_tripdata
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 1
+            period: day
